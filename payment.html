@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bus Ticket Payment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f1f1f1;
+      padding: 40px;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .info-box {
+      background: #fafafa;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin-bottom: 25px;
+    }
+
+    .info-box p {
+      margin: 8px 0;
+      font-size: 16px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #28a745;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    .success-message {
+      display: none;
+      text-align: center;
+      margin-top: 20px;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Confirm Your Ticket</h2>
+
+    <div class="info-box">
+      <p><strong>Boarding:</strong> <span id="boardingPoint">Station A</span></p>
+      <p><strong>Dropping:</strong> <span id="droppingPoint">Station B</span></p>
+      <p><strong>Seat No:</strong> <span id="seatNo">12A</span></p>
+      <p><strong>Fare:</strong> ₹ <span id="fare">450</span></p>
+    </div>
+
+    <label for="cardNumber">Card Number</label>
+    <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" />
+
+    <label for="expiry">Expiry Date</label>
+    <input type="text" id="expiry" placeholder="MM/YY" />
+
+    <label for="cvv">CVV</label>
+    <input type="password" id="cvv" placeholder="123" />
+
+    <button id="payBtn">Pay ₹450</button>
+
+    <div class="success-message" id="successMsg">🎉 Payment Successful! Your ticket has been booked.</div>
+  </div>
+
+  <script>
+    // Sample data - in a real app, you might pull these from localStorage or URL params
+    const boarding = "Station A";
+    const dropping = "Station B";
+    const seat = "12A";
+    const fare = 450;
+
+    document.getElementById('boardingPoint').textContent = boarding;
+    document.getElementById('droppingPoint').textContent = dropping;
+    document.getElementById('seatNo').textContent = seat;
+    document.getElementById('fare').textContent = fare;
+    document.getElementById('payBtn').textContent = `Pay ₹${fare}`;
+
+    const payBtn = document.getElementById('payBtn');
+    const successMsg = document.getElementById('successMsg');
+
+    payBtn.addEventListener('click', () => {
+      const card = document.getElementById('cardNumber').value.trim();
+      const expiry = document.getElementById('expiry').value.trim();
+      const cvv = document.getElementById('cvv').value.trim();
+
+      if (!card || !expiry || !cvv) {
+        alert("Please fill in all payment details.");
+        return;
+      }
+
+      payBtn.disabled = true;
+      payBtn.textContent = "Processing...";
+
+      setTimeout(() => {
+        payBtn.disabled = false;
+        payBtn.textContent = `Pay ₹${fare}`;
+        successMsg.style.display = "block";
+      }, 2000);
+    });
+  </script>
+</body>
+</html>
