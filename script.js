@@ -1,19 +1,19 @@
-let sbus = document.querySelector("#sbus");
-let search = document.querySelector(".section-Padding");
+// let sbus = document.querySelector("#sbus");
+// let search = document.querySelector(".section-Padding");
 
-window.addEventListener("load", () => {
-  search.classList.add("active");
-});
+// window.addEventListener("load", () => {
+//   search.classList.add("active");
+// });
 
-let viewSeat = document.querySelector("#viewSeat");
-let seatDetailsPage = document.querySelector(".seatDetailsPage");
-let closeSeat = document.querySelector("#closeSeat");
-viewSeat.addEventListener("click", () => {
-  seatDetailsPage.classList.add("active");
-});
-closeSeat.addEventListener("click", () => {
-  seatDetailsPage.classList.remove("active");
-});
+// let viewSeat = document.querySelector("#viewSeat");
+// let seatDetailsPage = document.querySelector(".seatDetailsPage");
+// let closeSeat = document.querySelector("#closeSeat");
+// viewSeat.addEventListener("click", () => {
+//   seatDetailsPage.classList.add("active");
+// });
+// closeSeat.addEventListener("click", () => {
+//   seatDetailsPage.classList.remove("active");
+// });
 
 // Boarding and Dropping Points Js
 const boardingSelect = document.getElementById("boarding");

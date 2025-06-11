@@ -78,48 +78,34 @@
       </div>
     </header>
     <!-- Header End -->
-    <section id="search" class="section-Padding">
-      <div class="container">
-        <div class="route">
-          <div class="busRoute">
-            <a href="index.html"><i class="ri-arrow-left-line"></i></a>
-            <p>Khanapara <i class="ri-arrow-right-line"></i> Tezpur</p>
-          </div>
-          <span>24 buses</span>
+
+    <section class="seatDetailsPage section-Padding" class="">
+      <div class="container py-5">
+        <div class="busRoute seatClose">
+          <a href="search.html"
+            ><i class="ri-close-large-line" id="closeSeat"></i
+          ></a>
+          <p>Khanapara <i class="ri-arrow-right-line"></i> Tezpur</p>
         </div>
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="filterBus">
-              <h4>Filter Buses</h4>
-              <hr />
-              <div class="buttons">
-                <button>Primo Bus</button>
-                <button>Special price</button>
-              </div>
-              <h4 class="pt-5">Bus Types</h4>
-              <hr />
-              <div class="buttons">
-                <button>Seeter</button>
-                <button>Sleeper</button>
-                <button>AC</button>
-                <button>Non AC</button>
+
+        <div class="container py-5">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="selectYourSeat">
+                <img
+                  class="img-fluid"
+                  src="https://st.redbus.in/seo/khm/seat-female_1739964123.webp"
+                  alt=""
+                />
               </div>
             </div>
-          </div>
-          <div class="col-lg-8">
-            <div class="foundBus">
-              <p class="fw-bold">24 buses found</p>
-              <hr />
-              <div class="bus">
-                <div class="busName">
-                  <div class="busHeading">
-                    <p>Assam state transport Corporation</p>
-                    <span>Volvo A/C Seater</span>
-                  </div>
-                  <div class="rating">
-                    <div class="star"><i class="ri-star-fill"></i>4.5</div>
-                    <span>241</span>
-                  </div>
+            <div class="col-lg-6">
+              <div class="seatforSelectedBus">
+                <div class="busHeading">
+                  <p class="fw-bold fs-5 text-primary">
+                    Assam state transport Corporation
+                  </p>
+                  <span>Volvo A/C Seater</span>
                   <div class="duration d-flex gap-3">
                     <div class="startTime">
                       <p class="fw-bold">14.20</p>
@@ -130,25 +116,53 @@
                       <span>11 seats</span>
                     </div>
                   </div>
-                  <div class="price">
-                    <p class="fw-bold">&#x20b9; 241</p>
-                  </div>
                 </div>
-                <div class="busPhoto mt-5">
-                  <div class="bdpoints d-flex gap-3">
-                    <p><a href="">Boarding/Dropping Points</a></p>
-                    <p><a href="">Bus Photos</a></p>
-                  </div>
-                  <div class="seatButton">
-                    <button id="viewSeat">
-                      <a href="seatDetails.html">View Seats</a>
-                    </button>
-                  </div>
+
+                <div class="rating">
+                  <div class="star"><i class="ri-star-fill"></i>4.5</div>
+                  <span>241</span>
+                </div>
+              </div>
+              <div class="busPhoto py-3">
+                <img
+                  class="img-fluid"
+                  src="https://images.unsplash.com/photo-1570125909517-53cb21c89ff2?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGJ1c3xlbnwwfHwwfHx8MA%3D%3D"
+                  alt=""
+                />
+                <img
+                  class="img-fluid"
+                  src="https://images.unsplash.com/photo-1570125909517-53cb21c89ff2?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGJ1c3xlbnwwfHwwfHx8MA%3D%3D"
+                  alt=""
+                />
+              </div>
+
+              <div class="boardingPoints">
+                <div class="container">
+                  <h2>Choose Your Points</h2>
+
+                  <label for="boarding">Boarding Point</label>
+                  <select id="boarding">
+                    <option value="">-- Select Boarding Point --</option>
+                    <option value="Station A">Station A</option>
+                    <option value="Station B">Station B</option>
+                    <option value="Station C">Station C</option>
+                  </select>
+
+                  <label for="dropping">Dropping Point</label>
+                  <select id="dropping">
+                    <option value="">-- Select Dropping Point --</option>
+                    <option value="Station X">Station X</option>
+                    <option value="Station Y">Station Y</option>
+                    <option value="Station Z">Station Z</option>
+                  </select>
+
+                  <button id="continueBtn">Continue to Payment</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <p></p>
       </div>
     </section>
 
